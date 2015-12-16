@@ -226,14 +226,14 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #
     elif player == 5:
         if getting_team_name:
-            return 'loyal vengeful'
+            return 'vengeful tsutter mharter'
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
             if len(opponent_history)==0: #It's the first round: collude
                 return 'c'
             elif history[-1]=='c' and opponent_history[-1]=='b':
-                return 'b' # betray is they were severely punished last time
+                return 'bb' # betray is they were severely punished last time
             else:
                 return 'c' #otherwise collude
     
@@ -250,13 +250,13 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #
     elif player == 6:
         if getting_team_name:
-            return 'loyal vengeful'
+            return 'betray until trust is earned mharter tsutter'
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
             if len(opponent_history)==0: #It's the first round: collude
-                return 'c'
-            elif history[-1]=='c' and opponent_history[-1]=='b':
+                return 'b'
+            elif history[-1]=='b' and opponent_history[-1]=='b':
                 return 'b' # betray is they were severely punished last time
             else:
                 return 'c' #otherwise collude
@@ -274,18 +274,18 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     ######       
     #
-    elif player == 7:
+     elif player == 7:
         if getting_team_name:
-            return 'loyal vengeful'
+            return 'copycat tsutter mharter'
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
-            if len(opponent_history)==0: #It's the first round: collude
+            if len(opponent_history)==0:
                 return 'c'
-            elif history[-1]=='c' and opponent_history[-1]=='b':
-                return 'b' # betray is they were sucker last time
+            elif opponent_history[-1]=='b':
+                return 'b' 
             else:
-                return 'c' #otherwise collude
+                return 'c' 
 
 
 
